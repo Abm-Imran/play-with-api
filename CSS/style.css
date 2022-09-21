@@ -2,3 +2,17 @@
     color:chocolate;
     font-size: 25px;
 }
+.post-h{
+    background-color: lightsteelblue;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    font-style: italic;
+}
+.post-p{
+    background-color: #000;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+
+}
