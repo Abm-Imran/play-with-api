@@ -31,11 +31,14 @@ const loadCountryDetails= name =>{
 }
 
 const displayCountryDetails = country =>{
-    console.log(country);
+    // console.log(country);
     const detailsBox = document.getElementById('singleCountryDetails');
-    // detailsBox = '';
+
+    // Ager country details muche notun jetay user click korbe seta dekhanur jonno
+    detailsBox.textContent = '';
+
     const div = document.createElement('div');
-    div.classList.add
+    div.classList.add('single-country-details');
     div.innerHTML=`
     <h3> Name: ${country.name.common}</h3>
     <p> Capital : ${country.capital}</p>
