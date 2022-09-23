@@ -16,3 +16,15 @@
     border-radius: 10px;
 
 }
+.country {
+    background-color: whitesmoke;
+    color: rgb(115, 60, 216);
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid blueviolet;
+    border-radius: 10px;
+}
+.country p span{
+    color: black
+}
+.
