@@ -14,6 +14,8 @@ const searchTemperature = ()=>{
     .then(data => displayTemperature(data))
 }
 
+
+
 const setCurrentCondition = (id, text)=>{
     document.getElementById(id).innerText = text;
 }
@@ -30,7 +32,6 @@ const displayTemperature = temp=>{
     console.log(url);
     console.log(temp.weather[0].icon);
     
-    imgIcon.setAttribute('src', url)
-
+    imgIcon.setAttribute('src', url);
 
 }
