@@ -1,13 +1,34 @@
+
+
+const toggleSpinner = spinnerStyle=>{
+  document.getElementById('spinner').style.display = spinnerStyle; 
+}
+const toggleDisplayMeal = spinnerStyle=>{
+  document.getElementById('search-result').style.display = spinnerStyle; 
+}
+
 const searchFood = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     // console.log(searchText);
-    searchField.value = '';
+
+    if(searchField.value == ''){
+      console.log('Please Type Your Fav Food')
+      document.getElementById('notFound').style.display = 'block';
+    }
+    else{
+      document.getElementById('notFound').style.display = 'none';
+      toggleSpinner('block');
+      toggleDisplayMeal('none')
+      searchField.value = '';
+
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`
 
     fetch(url)
         .then(res => res.json())
         .then(data => searchFoodResult(data.meals))
+    }
+
 }
 
 const searchFoodResult = meals => {
@@ -30,6 +51,9 @@ const searchFoodResult = meals => {
         foodBox.appendChild(div);
     })
 
+    toggleSpinner('none');
+    toggleDisplayMeal('block');
+
 }
 
 const loadMealDetails = mealId=>{
@@ -38,11 +62,11 @@ const loadMealDetails = mealId=>{
     // console.log(url);
     fetch(url)
     .then(res => res.json())
-    .then(data => displayMealDetails(data.meals[0]))
+    .then(data => displaySingleMealDetails(data.meals[0]))
 
 }
 
-const displayMealDetails = meal=>{
+const displaySingleMealDetails = meal=>{
     console.log(meal);
     const mealBox = document.getElementById('single-meal');
     mealBox.textContent = '';
